@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 780" width="800" height="780">
+  <rect width="800" height="780" fill="white"/>
+  <defs>
+    <linearGradient id="beam" x1="100.00" y1="559.62" x2="475.00" y2="343.11" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1E5099" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#1E5099" stop-opacity="1.0"/>
+    </linearGradient>
+  </defs>
+  <polygon points="100.00,559.62 700.00,559.62 400.00,40.00" fill="#0B1E3D"/>
+  <polygon points="100.00,559.62 518.30,418.11 431.70,268.11" fill="url(#beam)"/>
+  <circle cx="475.00" cy="343.11" r="86.60" fill="#F58220"/>
+  <text x="400" y="682"
+        font-family="Montserrat, 'Montserrat Black', Arial, sans-serif"
+        font-weight="900"
+        font-size="118"
+        fill="#0B1E3D"
+        text-anchor="middle"
+        textLength="600"
+        lengthAdjust="spacingAndGlyphs">NOVABOARD</text>
+</svg>
