@@ -489,7 +489,6 @@ footer a:hover{color:#fff}
   <div class="wrap row">
     <div>NOVABOARD Consultoria — Governança, Estratégia e Mentoria Executiva</div>
     <div>
-      <a href="mailto:contato@novaboard.com.br">contato@novaboard.com.br</a> &nbsp;·&nbsp;
       <a href="https://www.linkedin.com/company/novaboard/" target="_blank" rel="noopener">LinkedIn</a> &nbsp;·&nbsp;
       <a href="https://www.linkedin.com/newsletters/conselhos-de-valor-7391927686228639744/" target="_blank" rel="noopener">Newsletter</a>
     </div>
@@ -568,19 +567,19 @@ document.getElementById('search').addEventListener('input',function(e){state.q=e
 document.getElementById('sort').addEventListener('change',function(e){state.sort=e.target.value;render();});
 render();
 
-/* ===== Formulário (FormSubmit) ===== */
+/* ===== Formulário (FormSubmit via alias — e-mail oculto) ===== */
 (function(){
   var form=document.getElementById('nb-contato'),s=document.getElementById('nb-status');
   if(!form)return;
   form.addEventListener('submit',function(e){
     e.preventDefault();s.style.color='#aebbce';s.textContent='Enviando...';
-    fetch('https://formsubmit.co/ajax/contato@novaboard.com.br',{method:'POST',headers:{'Accept':'application/json'},body:new FormData(form)})
+    fetch('https://formsubmit.co/ajax/cb0fdb11801ce29431cf75cb0e4c9146',{method:'POST',headers:{'Accept':'application/json'},body:new FormData(form)})
     .then(function(r){return r.json();})
     .then(function(res){
       if(res.success==='true'||res.success===true){s.style.color='#fff';s.textContent='Mensagem enviada. Em breve entraremos em contato.';form.reset();}
       else{s.style.color='#fff';s.textContent=res.message||'Recebido.';}
     })
-    .catch(function(){s.style.color='#ffb4a8';s.textContent='Não foi possível enviar. Escreva para contato@novaboard.com.br.';});
+    .catch(function(){s.style.color='#ffb4a8';s.textContent='Não foi possível enviar agora. Por favor, tente novamente em instantes.';});
   });
 })();
 </script>
