@@ -157,11 +157,48 @@ footer{background:#081627;color:#9fb0c6;padding:40px 0;font-size:14px}
 footer .row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
 footer a{color:#cdd8e6}
 footer a:hover{color:#fff}
+/* PALESTRA */
+.pal-hero{background:linear-gradient(135deg,#0B1E3D 0%,#13294d 60%,#1E5099 140%);color:#fff;padding:72px 0}
+.pal-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:center}
+.pal-hero .eyebrow{color:var(--saffron)}
+.pal-hero h2{color:#fff;font-size:clamp(28px,3.6vw,42px);font-weight:800;margin-top:12px}
+.pal-hero .sub{margin-top:14px;font-size:15px;font-weight:600;color:#aebbce;letter-spacing:.02em}
+.pal-hero p.lead{margin-top:18px;font-size:17px;color:#d6deea;max-width:600px}
+.pal-hero .actions{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}
+.pal-video{position:relative;width:100%;max-width:340px;margin:0 auto;aspect-ratio:9/16;border-radius:20px;overflow:hidden;background:#000;box-shadow:0 24px 60px rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.12)}
+.pal-video video{width:100%;height:100%;object-fit:cover;display:block}
+.pal-stats{margin-top:36px;display:flex;gap:26px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.18);padding-top:20px}
+.pal-stats div{font-size:13px;color:#aebbce}
+.pal-stats b{display:block;font-size:24px;color:#fff;font-weight:800}
+.mods{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.mod{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px}
+.mod h4{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--royal);margin-bottom:12px}
+.mod ol{list-style:none;counter-reset:m}
+.mod li{padding:8px 0;border-top:1px solid var(--line);font-size:14.5px;font-weight:600;color:var(--navy)}
+.mod li:first-child{border-top:0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.box{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px}
+.box h3{font-size:19px;font-weight:800;margin-bottom:14px}
+.fmt{padding:12px 0;border-top:1px solid var(--line)}
+.fmt:first-of-type{border-top:0}
+.fmt b{display:block;color:var(--navy);font-size:15px}
+.fmt span{font-size:14px;color:var(--muted)}
+.checks{list-style:none}
+.checks li{display:flex;gap:10px;padding:8px 0;font-size:15px;font-weight:600;color:var(--navy);border-top:1px solid var(--line)}
+.checks li:first-child{border-top:0}
+.checks li::before{content:"\2713";color:var(--saffron);font-weight:800}
+.book{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;align-items:center}
+.book img{max-width:380px;width:100%;margin:0 auto}
+.book h2{font-size:clamp(26px,3vw,34px);font-weight:800;margin-top:12px}
+.book p{margin-top:14px;color:#33425a;font-size:16px}
+.book .actions{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
+.quote{margin-top:22px;font-size:15px;font-style:italic;color:var(--muted)}
 /* RESP */
 @media(max-width:860px){
 .menu{display:none}.burger{display:block}
 .menu.open{display:flex;position:absolute;top:96px;left:0;right:0;flex-direction:column;background:#fff;border-bottom:1px solid var(--line);padding:12px 24px;gap:4px}
-.frentes,.steps,.reg-grid,.covers,.doors{grid-template-columns:1fr}
+.frentes,.steps,.reg-grid,.covers,.doors,.pal-grid,.mods,.two,.book{grid-template-columns:1fr}
+.pal-grid{gap:36px}
 .cards{grid-template-columns:1fr}
 .reg-grid{grid-template-columns:1fr 1fr}
 }
@@ -179,6 +216,7 @@ footer a:hover{color:#fff}
       <a data-view="inicio" class="active">Início</a>
       <a data-view="sobre">Sobre</a>
       <a data-view="mentoria">Mentoria</a>
+      <a data-view="palestra">Palestra</a>
       <a data-view="conhecimento">Conhecimento</a>
       <a data-view="regulatorio">Regulatório</a>
       <a class="cta" data-view="contato">Fale conosco</a>
@@ -199,6 +237,7 @@ footer a:hover{color:#fff}
           <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
         </a>
         <a class="btn ghost" data-view="conhecimento">Acesso ao conhecimento</a>
+        <a class="btn ghost" data-view="palestra">Palestra</a>
       </div>
       <div class="trust">
         <div><b>2012</b>Fundação</div>
@@ -228,7 +267,7 @@ footer a:hover{color:#fff}
             <li>Due Diligence</li>
             <li>M&amp;A (Fusões e Aquisições)</li>
             <li>Empresas Familiares / transição societária</li>
-            <li>Palestras e Treinamentos Corporativos</li>
+            <li>Palestras e Treinamentos Corporativos <a class="li-more" data-view="palestra">Saiba mais &rarr;</a></li>
           </ul>
         </div>
         <div class="frente">
@@ -239,7 +278,7 @@ footer a:hover{color:#fff}
             <li>Mentoria de C-level</li>
             <li>Trilha de Conselho</li>
             <li>Assessment de Executivos e Conselheiros</li>
-            <li>Palestras e Treinamentos Corporativos</li>
+            <li>Palestras e Treinamentos Corporativos <a class="li-more" data-view="palestra">Saiba mais &rarr;</a></li>
           </ul>
           <a class="li-more" data-view="mentoria" style="margin-left:0">Conhecer a mentoria &rarr;</a>
         </div>
@@ -336,7 +375,7 @@ footer a:hover{color:#fff}
             <li>Mentoria de C-level</li>
             <li>Trilha de Conselho</li>
             <li>Assessment de Executivos e Conselheiros</li>
-            <li>Palestras e Treinamentos Corporativos</li>
+            <li>Palestras e Treinamentos Corporativos <a class="li-more" data-view="palestra">Saiba mais &rarr;</a></li>
           </ul>
         </div>
         <div class="frente">
@@ -466,6 +505,122 @@ footer a:hover{color:#fff}
   </section>
 </main>
 
+<!-- PALESTRA -->
+<main class="view" id="view-palestra">
+  <section class="pal-hero">
+    <div class="wrap pal-grid">
+      <div>
+        <div class="eyebrow">Palestra · A Jornada do CEO</div>
+        <h2>Sua empresa investe em formação de líderes. Eles assistem. E na segunda-feira, nada mudou.</h2>
+        <div class="sub">Liderança executiva na prática, para quem já está na arena.</div>
+        <p class="lead">O problema não é falta de conteúdo. É teoria desconectada de quem lidera equipes sob pressão, com pessoas difíceis, em cenários que nenhum slide previu. Esta palestra muda isso: casos reais de quem ocupou a cadeira de CEO por 17 anos, com ferramentas aplicáveis na semana seguinte.</p>
+        <div class="actions">
+          <a class="btn primary" data-view="contato" data-assunto="Palestras &amp; Treinamentos">Solicitar proposta
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
+          </a>
+          <a class="btn ghost" href="#livro" data-scroll="pal-livro">Conhecer o livro</a>
+        </div>
+        <div class="pal-stats">
+          <div><b>35</b>anos de carreira</div>
+          <div><b>17</b>anos como CEO</div>
+          <div><b>3</b>países de atuação</div>
+          <div><b>Desde 2012</b>em conselhos</div>
+        </div>
+      </div>
+      <div class="pal-video">
+        <video controls playsinline preload="metadata" poster="imagens/palestra-poster.jpg" aria-label="Vídeo da palestra A Jornada do CEO, com Arthur Lavieri">
+          <source src="videos/palestra-jornada-do-ceo.mp4" type="video/mp4">
+          Seu navegador não reproduz vídeo. <a href="videos/palestra-jornada-do-ceo.mp4">Baixe o vídeo</a>.
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <section class="s">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">O que a sua liderança leva</div>
+        <h2>Não entregamos inspiração que dura até o almoço. Entregamos reflexões e ferramentas aplicáveis.</h2>
+        <div class="rule"></div>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="num">01</div><h4>Clareza de papel</h4><p>Onde termina o gestor e começa o líder, e por que essa confusão custa caro.</p></div>
+        <div class="step"><div class="num">02</div><h4>Gestão de gente sem ilusão</h4><p>Pessoas complexas, expectativas não ditas e a armadilha da equipe-família.</p></div>
+        <div class="step"><div class="num">03</div><h4>Decisão sob pressão</h4><p>Decidir com velocidade sem atropelar pessoas nem processos.</p></div>
+        <div class="step"><div class="num">04</div><h4>Cultura que funciona</h4><p>Como a liderança cria, ou destrói, cultura a cada decisão do dia a dia.</p></div>
+        <div class="step"><div class="num">05</div><h4>Posicionamento e legado</h4><p>Autoridade, visibilidade e um plano de carreira consistente.</p></div>
+        <div class="step"><div class="num">06</div><h4>Ego calibrado</h4><p>Reconhecer quando o próprio ego é o maior obstáculo aos resultados da equipe.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="s alt">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Conteúdo</div>
+        <h2>Módulos combináveis, montados para a realidade da sua empresa.</h2>
+        <p>Os temas são selecionados conforme o desafio e o pedido da empresa, sempre com casos reais vividos pelo palestrante. O livro A Jornada do CEO é a referência.</p>
+        <div class="rule"></div>
+      </div>
+      <div class="mods">
+        <div class="mod"><h4>I · Semeadura</h4><ol>
+          <li>Propósito como força motriz</li><li>A virada de papéis: você saiu da turma</li><li>A Regra dos 100 Dias</li><li>Escuta ativa e leitura de ambiente</li><li>Cultura, crenças e burocracia na prática</li><li>Gente é o inferno, e a solução</li></ol></div>
+        <div class="mod"><h4>II · Amadurecimento</h4><ol>
+          <li>Feedback que transforma equipes</li><li>Expectativas secretas são apenas sonhos</li><li>Ego pode não matar, mas aleija</li><li>Quiet quitting e quiet cracking</li><li>Crise x problema: a diferença vital</li><li>Não é possível agradar a todos</li></ol></div>
+        <div class="mod"><h4>III · Colheita</h4><ol>
+          <li>Liderar para cima: influenciar sem cargo</li><li>O indispensável não progride</li><li>Sorte = oportunidade + preparo</li><li>Compliance e ética na prática</li><li>Exposição que fortalece posição</li><li>Planejando o próximo passo da carreira</li></ol></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="s">
+    <div class="wrap">
+      <div class="two">
+        <div class="box">
+          <h3>Formatos</h3>
+          <div class="fmt"><b>Keynote de abertura ou encerramento · 45 a 60 min</b><span>Panorama provocativo para lançar ou fechar convenções e kickoffs de liderança.</span></div>
+          <div class="fmt"><b>Palestra executiva · 60 a 90 min</b><span>Aprofundamento temático com casos reais, adaptado ao contexto da empresa contratante.</span></div>
+          <h3 style="margin-top:22px">A quem se destina</h3>
+          <ul class="checks">
+            <li>Gerentes e gerentes seniores em transição ou consolidação do papel de liderança</li>
+            <li>Diretores que buscam maior impacto estratégico e influência</li>
+            <li>Equipes de liderança em reestruturação, expansão ou virada cultural</li>
+            <li>Programas corporativos de formação executiva, com RH ou T&amp;D</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h3>Por que Arthur Lavieri</h3>
+          <ul class="checks">
+            <li>Casos próprios: decisões, acertos e erros reais</li>
+            <li>17 anos como CEO, com atuação no Brasil, nos Estados Unidos e na Alemanha</li>
+            <li>Conteúdo adaptado ao desafio específico da empresa</li>
+            <li>Ferramentas aplicáveis na semana seguinte</li>
+            <li>Debate com quem viveu os desafios de verdade</li>
+          </ul>
+          <p class="quote">"Tudo progride ou colapsa nas mãos da liderança." John C. Maxwell</p>
+          <a class="btn primary" style="margin-top:22px" data-view="contato" data-assunto="Palestras &amp; Treinamentos">Levar a palestra à minha empresa</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="s alt" id="pal-livro">
+    <div class="wrap book">
+      <img src="imagens/livro-jornada-do-ceo.png" alt="Capa do livro A Jornada do CEO: quando o céu tem limites, de Arthur Lavieri" loading="lazy">
+      <div>
+        <div class="eyebrow">O livro</div>
+        <h2>A Jornada do CEO: quando o céu tem limites</h2>
+        <p>Um guia prático de liderança que aborda com franqueza os dilemas reais de quem assume posições de alta gestão: da solidão das primeiras decisões à construção de cultura, do feedback difícil ao equilíbrio entre ego e resultado, da gestão de crises ao legado que se deixa na organização.</p>
+        <p>Com linguagem direta, casos vividos e contribuições de profissionais de desenvolvimento humano, a obra preenche a lacuna entre a teoria acadêmica e o cotidiano de quem lidera pessoas e negócios.</p>
+        <div class="actions">
+          <a class="btn primary" href="https://www.amazon.com.br/dp/6585083938" target="_blank" rel="noopener">Comprar na Amazon</a>
+          <a class="btn navy" href="https://www.cincogatas.com.br/product-page/a-jornada-do-ceo-quando-o-c%C3%A9u-tem-limites" target="_blank" rel="noopener">Comprar na Editora Cinco Gatas</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
 <!-- CONTATO -->
 <section class="contato" id="view-contato-anchor">
   <div class="wrap">
@@ -514,13 +669,26 @@ var views=document.querySelectorAll('.view'),links=document.querySelectorAll('.m
 function setView(v){
   if(v==='contato'){document.getElementById('view-contato-anchor').scrollIntoView({behavior:'smooth'});return;}
   views.forEach(function(s){s.classList.toggle('on',s.id==='view-'+v);});
+  document.querySelectorAll('.view:not(.on) video').forEach(function(x){x.pause();});
+  if(history.replaceState)history.replaceState(null,'',v==='inicio'?location.pathname:'#'+v);
   links.forEach(function(a){a.classList.toggle('active',a.getAttribute('data-view')===v);});
   window.scrollTo({top:0,behavior:'smooth'});
   document.getElementById('menu').classList.remove('open');
 }
 document.querySelectorAll('[data-view]').forEach(function(el){
-  el.addEventListener('click',function(e){e.preventDefault();setView(el.getAttribute('data-view'));});
+  el.addEventListener('click',function(e){
+    e.preventDefault();
+    var a=el.getAttribute('data-assunto');
+    if(a){var sel=document.querySelector('#nb-contato select[name=assunto]');if(sel)sel.value=a;}
+    setView(el.getAttribute('data-view'));
+  });
 });
+document.querySelectorAll('[data-scroll]').forEach(function(el){
+  el.addEventListener('click',function(e){e.preventDefault();document.getElementById(el.getAttribute('data-scroll')).scrollIntoView({behavior:'smooth'});});
+});
+/* Link direto: novaboard.com.br/#palestra abre a página da palestra */
+function fromHash(){var h=(location.hash||'').replace('#','');if(h&&document.getElementById('view-'+h))setView(h);}
+window.addEventListener('hashchange',fromHash);fromHash();
 document.getElementById('burger').addEventListener('click',function(){document.getElementById('menu').classList.toggle('open');});
 
 /* ===== Repositório ===== */
